@@ -13,5 +13,5 @@ fi
 export GIT_SSH_COMMAND="ssh -i $(pwd)/uploadkey.pem"
 
 git add .
-git commit -a -m 'auto commit'
+git commit -a -m 'auto commit by bot'
 git push
