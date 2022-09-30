@@ -1,0 +1,6 @@
+*.pem
+*.pub
+*.tmp
+.DS_Store
+~*
+*.swp
