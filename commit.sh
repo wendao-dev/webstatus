@@ -3,10 +3,12 @@
 SCDIR=$(dirname $(realpath "${BASH_SOURCE[0]}"))
 cd "$SCDIR"
 
-cat >> index.html <<'EOF'
+if [ "$(tail -n 1 index.html)" != "</html>" ] ; then
+	cat >> index.html <<'EOF'
 </body>
 </html>
 EOF
+fi
 
 git add .
 git commit -a -m 'auto commit'
