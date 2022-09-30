@@ -10,7 +10,10 @@ if [ "$(tail -n 1 index.html)" != "</html>" ] ; then
 EOF
 fi
 
-export GIT_SSH_COMMAND="ssh -i $(pwd)/uploadkey.pem"
+if [ ! -f "~/.ssh/uploadkey.pem" ] ; then
+	cp $(pwd)/uploadkey.pem ~/.ssh/uploadkey.pem
+fi
+export GIT_SSH_COMMAND="ssh -i ~/.ssh/uploadkey.pem"
 
 git add .
 git commit -a -m 'auto commit by bot'
