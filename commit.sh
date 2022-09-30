@@ -10,7 +10,7 @@ if [ "$(tail -n 1 index.html)" != "</html>" ] ; then
 EOF
 fi
 
-export GIT_SSH_COMMAND="ssh -i $(PWD)/uploadkey.pem"
+export GIT_SSH_COMMAND="ssh -i $(pwd)/uploadkey.pem"
 
 git add .
 git commit -a -m 'auto commit'
