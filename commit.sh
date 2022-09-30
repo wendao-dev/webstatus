@@ -12,6 +12,7 @@ fi
 
 if [ ! -f "~/.ssh/uploadkey.pem" ] ; then
 	cp $(pwd)/uploadkey.pem ~/.ssh/uploadkey.pem
+	chmod 600 ~/.ssh/uploadkey.pem
 fi
 export GIT_SSH_COMMAND="ssh -i ~/.ssh/uploadkey.pem"
 
